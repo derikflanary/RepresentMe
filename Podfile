@@ -3,8 +3,8 @@
 use_frameworks!
 
 target 'RepresentMe' do
-pod 'AFNetworking', '~> 2.0'
 pod 'Alamofire', '~> 1.2'
+pod 'SwiftSpinner'
 end
 
 target 'RepresentMeTests' do

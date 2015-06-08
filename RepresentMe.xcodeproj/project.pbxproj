@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4BC8510180D4D7C53A768FDF /* Pods_RepresentMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF306AB2B16312FB7BE66F00 /* Pods_RepresentMe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EEEAF08F1B25FC4E00E9CDD5 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAF08E1B25FC4E00E9CDD5 /* TextFieldTableViewCell.swift */; };
+		EEEAF0911B2616A000E9CDD5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEAF0901B2616A000E9CDD5 /* CoreLocation.framework */; };
 		EEEC419A1B24BD1D00D0D270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC41991B24BD1D00D0D270 /* AppDelegate.swift */; };
 		EEEC419C1B24BD1D00D0D270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC419B1B24BD1D00D0D270 /* ViewController.swift */; };
 		EEEC419F1B24BD1D00D0D270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC419D1B24BD1D00D0D270 /* Main.storyboard */; };
@@ -15,7 +17,6 @@
 		EEEC41A41B24BD1D00D0D270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEEC41A21B24BD1D00D0D270 /* LaunchScreen.xib */; };
 		EEEC41B01B24BD1D00D0D270 /* RepresentMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC41AF1B24BD1D00D0D270 /* RepresentMeTests.swift */; };
 		EEEC41BA1B24FDAA00D0D270 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC41B91B24FDAA00D0D270 /* DetailViewController.swift */; };
-		EEEC41BC1B250D4000D0D270 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC41BB1B250D4000D0D270 /* NetworkController.swift */; };
 		EEEC41BE1B250D5000D0D270 /* CongressMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC41BD1B250D5000D0D270 /* CongressMemberController.swift */; };
 		EEEC41C01B250D6500D0D270 /* CongressMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC41BF1B250D6500D0D270 /* CongressMember.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,8 @@
 		9AD4A8038AEFCB78CA9ED78A /* Pods-RepresentMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepresentMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RepresentMe/Pods-RepresentMe.debug.xcconfig"; sourceTree = "<group>"; };
 		C8B0B54C4042ADDE31C1CE1A /* Pods-RepresentMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepresentMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepresentMe/Pods-RepresentMe.release.xcconfig"; sourceTree = "<group>"; };
 		DF306AB2B16312FB7BE66F00 /* Pods_RepresentMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RepresentMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEEAF08E1B25FC4E00E9CDD5 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		EEEAF0901B2616A000E9CDD5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EEEC41941B24BD1D00D0D270 /* RepresentMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepresentMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC41981B24BD1D00D0D270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEEC41991B24BD1D00D0D270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		EEEC41AE1B24BD1D00D0D270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEEC41AF1B24BD1D00D0D270 /* RepresentMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentMeTests.swift; sourceTree = "<group>"; };
 		EEEC41B91B24FDAA00D0D270 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		EEEC41BB1B250D4000D0D270 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		EEEC41BD1B250D5000D0D270 /* CongressMemberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongressMemberController.swift; sourceTree = "<group>"; };
 		EEEC41BF1B250D6500D0D270 /* CongressMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongressMember.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEAF0911B2616A000E9CDD5 /* CoreLocation.framework in Frameworks */,
 				4BC8510180D4D7C53A768FDF /* Pods_RepresentMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +84,7 @@
 		7792B1428CF72C926D809EFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEEAF0901B2616A000E9CDD5 /* CoreLocation.framework */,
 				DF306AB2B16312FB7BE66F00 /* Pods_RepresentMe.framework */,
 			);
 			name = Frameworks;
@@ -112,9 +116,9 @@
 				EEEC41991B24BD1D00D0D270 /* AppDelegate.swift */,
 				EEEC419B1B24BD1D00D0D270 /* ViewController.swift */,
 				EEEC41B91B24FDAA00D0D270 /* DetailViewController.swift */,
-				EEEC41BB1B250D4000D0D270 /* NetworkController.swift */,
 				EEEC41BD1B250D5000D0D270 /* CongressMemberController.swift */,
 				EEEC41BF1B250D6500D0D270 /* CongressMember.swift */,
+				EEEAF08E1B25FC4E00E9CDD5 /* TextFieldTableViewCell.swift */,
 				EEEC419D1B24BD1D00D0D270 /* Main.storyboard */,
 				EEEC41A01B24BD1D00D0D270 /* Images.xcassets */,
 				EEEC41A21B24BD1D00D0D270 /* LaunchScreen.xib */,
@@ -300,9 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEC41BE1B250D5000D0D270 /* CongressMemberController.swift in Sources */,
-				EEEC41BC1B250D4000D0D270 /* NetworkController.swift in Sources */,
 				EEEC41BA1B24FDAA00D0D270 /* DetailViewController.swift in Sources */,
 				EEEC41C01B250D6500D0D270 /* CongressMember.swift in Sources */,
+				EEEAF08F1B25FC4E00E9CDD5 /* TextFieldTableViewCell.swift in Sources */,
 				EEEC419C1B24BD1D00D0D270 /* ViewController.swift in Sources */,
 				EEEC419A1B24BD1D00D0D270 /* AppDelegate.swift in Sources */,
 			);

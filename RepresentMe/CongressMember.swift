@@ -18,6 +18,17 @@ class CongressMember: NSObject {
     var address : String
     var link : String
     
+    override init() {
+        name = ""
+        party = ""
+        state = ""
+        district = ""
+        phone = ""
+        address = ""
+        link = ""
+        
+    }
+
     init(dictionary: NSDictionary) {
         name = (dictionary["name"] as? String)!
         party = (dictionary["party"] as? String)!
@@ -26,7 +37,6 @@ class CongressMember: NSObject {
         phone = (dictionary["phone"] as? String)!
         address = (dictionary["office"] as? String)!
         link = (dictionary["link"] as? String)!
-
     }
     
 }

@@ -13,39 +13,37 @@ class CongressMemberController: NSObject {
     
     var data: NSMutableData = NSMutableData()
     
-//    class SharedInstance {
-//        class var sharedInstance :SharedInstance {
-//            struct Singleton {
-//                static let instance = SharedInstance()
-//            }
-//            return Singleton.instance
-//        }
-//    }
-
-    func pathForRepByZip(zip: String) -> String{
-    return NSString(format:"http://whoismyrepresentative.com/getall_mems.php?zip=%@&output=json", zip) as String
-    
-    }
-    
-    func fetchRepsByZip(zip: String, completion: (NSMutableArray) -> Void) {
-        let urlString: String = pathForRepByZip(zip)
-        Alamofire.request(.GET, urlString).responseJSON { (_, _, JSON, ERROR) -> Void in
-//            println(JSON)
-            
-            let responseDictionary = JSON as! NSDictionary
-            var responseArray = NSArray()
-            var congressmen = NSMutableArray()
-            responseArray = responseDictionary["results"] as! NSArray
-            for dict in responseArray{
-                var congressMember = CongressMember(dictionary: dict as! NSDictionary)
-                println(congressMember.name)
-                congressmen.addObject(congressMember)
-            }
-            
-            completion(congressmen)
-            
+    class Singleton  {
+        static let sharedInstance = Singleton()
+        func pathForRepByZip(zip: String) -> String{
+            return NSString(format:"http://whoismyrepresentative.com/getall_mems.php?zip=%@&output=json", zip) as String
         }
         
+        func fetchRepsByZip(zip: String, completion: (NSMutableArray) -> Void) {
+            //Get api url
+            let urlString: String = pathForRepByZip(zip)
+            
+            Alamofire.request(.GET, urlString).responseJSON { (_, _, JSON, ERROR) -> Void in
+                //Check if json returned
+                if JSON != nil{
+                    //Convert Json to Array
+                    let responseDictionary = JSON as! NSDictionary
+                    var responseArray = NSArray()
+                    var congressmen = NSMutableArray()
+                    responseArray = responseDictionary["results"] as! NSArray
+                    for dict in responseArray{
+                        //Convert json array to congress member objects in an array
+                        var congressMember = CongressMember(dictionary: dict as! NSDictionary)
+                        println(congressMember.name)
+                        congressmen.addObject(congressMember)
+                    }
+                    completion(congressmen)
+                }else{
+                    //Return an empty array
+                    var congressmen = NSMutableArray()
+                    completion(congressmen)
+                }
+            }
+        }
     }
-
 }

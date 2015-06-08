@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-RepresentMe-AFNetworking.xcscheme</key>
+		<key>Pods-RepresentMe-Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RepresentMe-Alamofire.xcscheme</key>
+		<key>Pods-RepresentMe-SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E0B053BFF1693A9E25ACEAB</key>
+		<key>3E71B085322791B3F49F9616</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A27D2206D39D1CC3A3C2BFD</key>
+		<key>58C5A25210C9C7B0EA3C8FD7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83C4EC921A00BE9B0FE83794</key>
+		<key>68331BC30322BAF9A010EB68</key>
 		<dict>
 			<key>primary</key>
 			<true/>

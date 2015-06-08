@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E71B085322791B3F49F9616"
-               BuildableName = "Alamofire.framework"
-               BlueprintName = "Pods-RepresentMe-Alamofire"
+               BlueprintIdentifier = "68331BC30322BAF9A010EB68"
+               BuildableName = "SwiftSpinner.framework"
+               BlueprintName = "Pods-RepresentMe-SwiftSpinner"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
