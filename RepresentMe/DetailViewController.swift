@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     var responseDataArray = NSArray()
     var tableView: UITableView?
     var segmentedControl : UISegmentedControl?
+    var link = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +137,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 cell?.textLabel?.text = congressMember.address
             case .Link:
                 cell?.textLabel?.text = congressMember.link
+                cell?.selectionStyle = UITableViewCellSelectionStyle.Default
+                link = congressMember.link
             }
         }
         return cell!;
@@ -143,6 +146,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 7{
+            UIApplication.sharedApplication().openURL(NSURL(string: link)!)
+        }
     }
 }
 
