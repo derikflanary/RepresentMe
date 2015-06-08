@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.backgroundColor = UIColor.whiteColor();
         self.title = "RepresentMe"
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        
         tableView = UITableView(frame: self.view.frame, style: .Grouped)
         tableView!.dataSource = self
         tableView!.delegate = self
@@ -34,7 +36,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tapGesture.addTarget(self, action: "viewTapped")
         tapGesture.cancelsTouchesInView = false
         self.view .addGestureRecognizer(tapGesture)
-        
     }
     
     func viewTapped(){
@@ -63,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell = TextFieldTableViewCell()
         }
         if indexPath.row == 0{
-            cell?.textField.placeholder = "Search by zipcode"
+            cell?.textField.placeholder = "Search by ZIP code"
             cell?.textField.text = zipFromTextField
             cell?.textField.delegate = self
             cell?.userInteractionEnabled = true
@@ -88,9 +89,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if indexPath.row == 0{
             let congressController = CongressMemberController()
             CongressMemberController.Singleton.sharedInstance.fetchRepsByZip(zipFromTextField, completion: { (dataArray) -> Void in
-                println(dataArray)
                 if dataArray.count == 0{
-                    let alertController: UIAlertController = UIAlertController(title: "Invalid Zipcode", message: "Please enter a valid U.S. zipcode", preferredStyle: .Alert)
+                    let alertController: UIAlertController = UIAlertController(title: "Invalid ZIP code", message: "Please enter a valid U.S. ZIP code", preferredStyle: .Alert)
                     let cancelAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
                         tableView.deselectRowAtIndexPath(indexPath, animated: true)
                         var indexPath = NSIndexPath(forRow: 0, inSection: 0)
@@ -102,6 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }else{
                     var detailViewController = DetailViewController()
                     detailViewController.responseDataArray = dataArray
+                    detailViewController.title = self.zipFromTextField
                     self.navigationController?.pushViewController(detailViewController, animated: true)
                     tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 }
@@ -149,7 +150,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     //Check if Invalid Zip
                     SwiftSpinner.hide()
                     if dataArray.count == 0{
-                        let alertController: UIAlertController = UIAlertController(title: "Invalid Zipcode", message: "Please enter a valid U.S. zipcode", preferredStyle: .Alert)
+                        let alertController: UIAlertController = UIAlertController(title: "Invalid Zip code", message: "Please enter a valid U.S. ZIP code", preferredStyle: .Alert)
                         let cancelAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
                             return
                         }
@@ -159,6 +160,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     }else{
                         var detailViewController = DetailViewController()
                         detailViewController.responseDataArray = dataArray
+                        detailViewController.title = self.zipFromLocation
                         self.navigationController?.pushViewController(detailViewController, animated: true)
                     }
                 })
