@@ -90,6 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let congressController = CongressMemberController()
             CongressMemberController.Singleton.sharedInstance.fetchRepsByZip(zipFromTextField, completion: { (dataArray) -> Void in
                 if dataArray.count == 0{
+                    
                     let alertController: UIAlertController = UIAlertController(title: "Invalid ZIP code", message: "Please enter a valid U.S. ZIP code", preferredStyle: .Alert)
                     let cancelAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
                         tableView.deselectRowAtIndexPath(indexPath, animated: true)

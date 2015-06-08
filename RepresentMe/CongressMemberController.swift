@@ -15,6 +15,7 @@ class CongressMemberController: NSObject {
     
     class Singleton  {
         static let sharedInstance = Singleton()
+        
         func pathForRepByZip(zip: String) -> String{
             return NSString(format:"http://whoismyrepresentative.com/getall_mems.php?zip=%@&output=json", zip) as String
         }

@@ -29,6 +29,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView!)
         
+        //segmented control
         let titleArray = ["Representative", "Sr. Senator", "Jr. Senator"]
         segmentedControl = UISegmentedControl(items: titleArray)
         segmentedControl?.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
@@ -37,15 +38,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         segmentedControl?.addTarget(self, action: "segmentedControlChangedValue", forControlEvents: UIControlEvents.ValueChanged)
     }
     
+//Segmented Control Method
     func segmentedControlChangedValue(){
         self.tableView!.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+//TableView Datasource and Delegate Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if section == 0{
             return 0
@@ -117,7 +115,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 }else{
                     congressMember = responseDataArray.objectAtIndex(2) as! CongressMember
                 }
-
             }
             
             switch TableViewSection(rawValue: indexPath.section)!{
@@ -150,6 +147,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             UIApplication.sharedApplication().openURL(NSURL(string: link)!)
         }
     }
+    
+//Other Methods
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
 }
 
 
