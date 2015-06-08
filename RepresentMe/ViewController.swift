@@ -93,6 +93,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     let alertController: UIAlertController = UIAlertController(title: "Invalid Zipcode", message: "Please enter a valid U.S. zipcode", preferredStyle: .Alert)
                     let cancelAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
                         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                        var indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
                     }
                     alertController.addAction(cancelAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
@@ -108,7 +110,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             currentLocationIdentifier()
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
-        
     }
     
 //Location Methods
