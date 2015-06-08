@@ -1,0 +1,6 @@
+framework module Pods_RepresentMe {
+  umbrella header "Pods-RepresentMe-umbrella.h"
+
+  export *
+  module * { export * }
+}
