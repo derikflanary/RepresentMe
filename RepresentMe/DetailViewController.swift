@@ -23,17 +23,23 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         
-        self.tableView = UITableView(frame: self.view.frame, style: .Grouped)
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "lauchImage.png")
+        imageView.frame = self.view.bounds
+        self.view.addSubview(imageView)
+        
+        self.tableView = UITableView(frame: CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height), style: .Grouped)
         self.tableView!.dataSource = self
         self.tableView!.delegate = self
         self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView?.backgroundColor = UIColor(white: 1, alpha: 0.8)
         self.view.addSubview(self.tableView!)
         
         //segmented control
         let titleArray = ["Representative", "Sr. Senator", "Jr. Senator"]
         segmentedControl = UISegmentedControl(items: titleArray)
         segmentedControl?.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
-        segmentedControl?.tintColor = UIColor.lightGrayColor()
+        segmentedControl?.tintColor = UIColor(red: 0.77, green: 0.38, blue: 0.15, alpha: 1)
         segmentedControl?.selectedSegmentIndex = 0
         segmentedControl?.addTarget(self, action: "segmentedControlChangedValue", forControlEvents: UIControlEvents.ValueChanged)
     }

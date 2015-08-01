@@ -12,6 +12,7 @@ import SwiftSpinner
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate {
     
+    
     var tableView: UITableView?
     let tapGesture = UITapGestureRecognizer()
     var zipFromTextField: String = ""
@@ -23,13 +24,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor();
         self.title = "RepresentMe"
-        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         
-        tableView = UITableView(frame: self.view.frame, style: .Grouped)
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "lauchImage.png")
+        imageView.frame = self.view.bounds
+        self.view.addSubview(imageView)
+        
+        tableView = UITableView(frame: CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height), style: .Grouped)
         tableView!.dataSource = self
         tableView!.delegate = self
         tableView!.registerClass(TextFieldTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView?.backgroundColor = UIColor(white: 1, alpha: 0.7)
         self.view.addSubview(tableView!)
         
         //tap gesture to close keyboard

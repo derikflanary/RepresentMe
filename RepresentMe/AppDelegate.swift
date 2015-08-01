@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var mainViewController = ViewController()
         var navController = UINavigationController(rootViewController: mainViewController)
         self.window?.rootViewController = navController
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         // Override point for customization after application launch.
         return true
     }
