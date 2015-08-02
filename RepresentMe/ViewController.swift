@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //tap gesture to close keyboard
         tapGesture.addTarget(self, action: "viewTapped")
         tapGesture.cancelsTouchesInView = false
-        self.view .addGestureRecognizer(tapGesture)
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     func viewTapped(){
@@ -97,7 +97,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             CongressMemberController.Singleton.sharedInstance.fetchRepsByZip(zipFromTextField, completion: { (dataArray) -> Void in
                 if dataArray.count == 0{
                     
-                    let alertController: UIAlertController = UIAlertController(title: "Invalid ZIP code", message: "Please enter a valid U.S. ZIP code", preferredStyle: .Alert)
+                    let alertController: UIAlertController = UIAlertController(title: "Invalid ZIP Code", message: "Please enter a valid U.S. ZIP code", preferredStyle: .Alert)
                     let cancelAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
                         tableView.deselectRowAtIndexPath(indexPath, animated: true)
                         var indexPath = NSIndexPath(forRow: 0, inSection: 0)
@@ -157,7 +157,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     //Check if Invalid Zip
                     SwiftSpinner.hide()
                     if dataArray.count == 0{
-                        let alertController: UIAlertController = UIAlertController(title: "Invalid Zip code", message: "Please enter a valid U.S. ZIP code", preferredStyle: .Alert)
+                        let alertController: UIAlertController = UIAlertController(title: "Invalid ZIP Code", message: "Could not find a valid zip code at your current location", preferredStyle: .Alert)
                         let cancelAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
                             return
                         }

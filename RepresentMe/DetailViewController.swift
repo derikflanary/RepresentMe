@@ -28,7 +28,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         imageView.frame = self.view.bounds
         self.view.addSubview(imageView)
         
-        self.tableView = UITableView(frame: CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height), style: .Grouped)
+        self.tableView = UITableView(frame: CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64), style: .Grouped)
         self.tableView!.dataSource = self
         self.tableView!.delegate = self
         self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
